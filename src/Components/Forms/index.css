@@ -1,0 +1,27 @@
+/*
+    Общие стили для форм
+*/
+.form{
+    border: 1px solid #000;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px; 
+}
+.form h2{
+    padding: 5px;
+} 
+.form input{
+    margin-top: 10px;
+}
+.form button{
+    margin: 10px;
+}
+.form hr{
+    margin-top: 3px;
+    margin-bottom: 15px;
+}
+@media (max-width: 400px) {
+    .form h2{
+        font-size: 1.5rem;
+    }
+}

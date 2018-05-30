@@ -1,0 +1,26 @@
+.top-manu-container {
+    height: 80px;
+    line-height: 80px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px; }
+  
+  .top-manu-container ul {
+    list-style: none; }
+  
+  .top-manu-container ul li {
+    display: block;
+    float: left;
+    cursor: pointer;
+    padding-left: 25px;
+    padding-right: 25px;
+    -webkit-transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s; }
+  
+  .top-manu-container ul li:hover {
+    background-color: #007bff;
+    color: #fff; }
+  
+  .top-manu-container ul a:hover {
+    color: #fff !important; }

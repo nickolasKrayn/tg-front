@@ -5,6 +5,12 @@ class Api {
         this.host = `${hostConfig.apiProtocol}://${hostConfig.apiUrl}/${hostConfig.apiPrefix}`;
     }
 
+    isAuthorized() {
+        var token = window.localStorage.getItem('token');
+
+        return token == undefined;
+    }
+
     async get(method, params) {
         let reqUrl = `${this.host}/${method}`;
         if (params !== undefined) {
@@ -15,6 +21,8 @@ class Api {
             method: 'GET'
         };
 
+        console.log(reqUrl);
+        return;
         if (this.isAuthorized()) {
             options.headers = {
                 'Authorization': 'Bearer ' + this.token
