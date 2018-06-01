@@ -75,7 +75,14 @@ export default function (WrapComponent) {
 
 
         render() {
-            return (<WrapComponent {...this.props} regResponse={this.state.regResponse} registration={this.registration} />);
+            let responses = this.props.responseData;
+
+            if (responses) {
+                responses['signup'] = this.state.regResponse;
+                return (<WrapComponent {...this.props} responseData={responses} registration={this.registration} />);
+            }
+
+            return (<WrapComponent {...this.props} responseData={{ signup: this.state.regResponse }} registration={this.registration} />);
         }
     }
 

@@ -48,7 +48,14 @@ export default function (WrappedComponent) {
         }
 
         render() {
-            return <WrappedComponent {...this.props} login={this.login} loginResponse={this.state.loginResponse} />
+            // на случай если будет несколько вложенных api HOC'ов
+            if (this.props.responseData) {
+                let responses = { ...this.props.responseData };
+                responses['login'] = this.state.loginResponse;
+                return <WrappedComponent {...this.props} login={this.login} responseData={responses} />
+            }
+
+            return <WrappedComponent {...this.props} login={this.login} responseData={{ login: this.state.loginResponse }} />
         }
     }
 

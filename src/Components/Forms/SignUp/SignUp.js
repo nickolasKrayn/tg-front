@@ -16,8 +16,8 @@ class SignUp extends Component {
         super(props);
 
         this.state = {
-            email: 'test223login@mail.ru',
-            login: 'loginloginlogin',
+            email: 'test223login2@mail.ru',
+            login: 'loginloginloginlogin',
             password: 'password',
             confirmation: 'password',
         };
@@ -27,8 +27,8 @@ class SignUp extends Component {
 
     componentDidMount() {
         this.setState({
-            email: 'test223login@mail.ru',
-            login: 'loginloginlogin',
+            email: 'test223login2@mail.ru',
+            login: 'loginloginloginlogin',
             password: 'Password2!',
             confirmation: 'Password2!',
         });
@@ -64,7 +64,7 @@ class SignUp extends Component {
     }
 
     render() {
-        var status = this.props.regResponse;
+        var status = this.props.responseData.signup;
 
         return (<div className="form">
             <h2>Зарегистрироваться {status}</h2>
